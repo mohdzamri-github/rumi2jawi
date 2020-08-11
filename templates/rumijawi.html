@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Welcome | Rumi-Jawi transliteration engine)</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"
+    integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1116317-9']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })
+      ();
+  </script>
+  <style>
+    p.serif {
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    p.sansserif {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/overview">Overview</a>
+        <a class="navbar-brand" href="/hubungi">Hubungi</a>
+        <a class="navbar-brand" href="/teknikal">Teknikal</a>
+        <a class="navbar-brand" href="/rumijawi">Rumi-Jawi</a>
+        <a class="navbar-brand" href="/rumijawi_paragraph">Rumi-Jawi peranggan</a>
+        <a class="navbar-brand" href="/nama">Transliterasi Nama</a>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9">
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <form action="/transliterate" method="post">
+          <input name="rumi" type="text" placeholder="tulis perkataan rumi di sini">
+          <!-- <input type="submit" value="transliterate"></input> -->
+          <button class="btn btn-primary" name="_submit" type="submit" value="transliterate">transliterate</button>
+        </form>
+      </div>
+    </div>
+    <h1>&nbsp;</h1>
+    <h1>&nbsp;</h1>
+    <div class="well well-lg">
+      <h2>Bahan untuk komputer</h2> Mohon muat-turun dan pasang bahan berikut di komputer anda untuk menulis dan membaca
+      Jawi dengan baik.
+      <ol>
+        <li>fon Jawi. <a href="/static/JawiUthmanTaha.ttf">Jawi
+            Uthman Taha</a>. Perlu untuk memaparkan 6 huruf tambahan Jawi.
+        </li>
+        <li> font Arabic/Jawi dari
+          <a href=https://www.google.com/get/noto />Google Noto</a>.
+          Perlu untuk memaparkan 6 huruf tambahan Jawi.
+          </br>
+        <li><a href="/static/NotoKufiArabic-hinted.zip">Noto Kufi Arabic</a> </li>
+        <li><a href="/static/NotoNashArabic-hinted.zip">Noto Nash Arabic</a> </li>
+        <li>Papan kekunci Jawi piawai UKM(2016) untuk Window 7/8/9/10. versi 19-10-2016.
+          <a href="/static/jawiukm.zip">JawiUKM</a>. Cara pasang papan kekunci.
+          <a href="/static/pasang_kekunci.pdf">Cara pasang kekunci</a>.
+        </li>
+        <li> sampel jawi dan fon. <a href="/static/sample_jawi_fonts.pdf">pdf</a> <a
+            href="/static/sample_jawi_fonts.docx">docx</a></li>
+      </ol>
+    </div>
+
+    <div class="well well-lg">
+      <h2>Penambahbaikan dan Data Tambahan</h2>
+      <a href="http://goo.gl/forms/PTD68cxSDy">komen dan data tambahan sini</a>.</p>
+      Shukran.
+    </div>
+    <h2>Last 10 visits</h2>
+    {% for time in times %}  <p>{{ time['timestamp'] }}</p>
+    {% endfor %}
+    <footer class="footer">
+      <p class="text-primary">More Information: zamri@ukm.edu.my.</p>
+      <p class="text-primary">latest update: {{latest_changes}} </p>
+    </footer>
+  </div>
+</body>
+
+</html>

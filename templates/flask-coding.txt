@@ -1,0 +1,51 @@
+# flask original
+<link rel=stylesheet type=text/css href="/static/style.css">
+<link rel="shortcut icon" href="/static/favicon.ico">
+<script type=text/javascript
+  src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+
+  <style type=text/css>
+    h1 { margin: 0 0 30px 0; background: url(/static/logo.png) no-repeat center; height: 165px; }
+    h1 span, p.tagline { display: none; }
+  </style>
+
+  <script type=text/javascript>
+    $(function() {
+      $('h1').bind('mousedown contextmenu', function(event) {
+        if (event.button != 2)
+          return;
+        var box = $('div.logohint');
+        if (!box.is(':visible'))
+          box.animate({'height': 'show', 'opacity': 'show'}, 100);
+        event.preventDefault();
+        event.returnValue = false;
+        return false;
+      });
+    });
+  </script>
+
+
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<link href="bootsrap/css/blog.css" rel="stylesheet">
+
+
+<div class="blog-post">
+Please input rumi word. 
+<p>
+<section>
+   <form action="/transliterate" method="post">
+  <input type="text" name="rumi"></input>
+  <input type="submit" value="transliterate"></input>
+  </form>
+</section>
+<p>
+</div>

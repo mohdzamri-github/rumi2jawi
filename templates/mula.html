@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<title>Welcome | Flask (A Python Microframework)</title>
+<meta charset=utf-8>
+<link rel=stylesheet type=text/css href="/static/style.css">
+<link rel="shortcut icon" href="/static/favicon.ico">
+<script type=text/javascript src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<style type=text/css>
+  h1 {
+    margin: 0 0 30px 0;
+    background: url(/static/logo.png) no-repeat center;
+    height: 165px;
+  }
+
+  h1 span,
+  p.tagline {
+    display: none;
+  }
+</style>
+<script type=text/javascript>
+    $(function() {
+      $('h1').bind('mousedown contextmenu', function(event) {
+        if (event.button != 2)
+          return;
+        var box = $('div.logohint');
+        if (!box.is(':visible'))
+          box.animate({'height': 'show', 'opacity': 'show'}, 100);
+        event.preventDefault();
+        event.returnValue = false;
+        return false;
+      });
+    });
+  </script>
+
+
+
+<html>
+
+<body>
+
+  <!--   <head>
+    <title>{{ author }}'s app</title>
+  </head>
+
+  <body>
+    <h2>Hello {{ name }}!</h2> -->
+
+  Please fill in the form.
+  <p>
+    The e-mail address is {{email}}
+  <p>
+
+  <form action="/signup" method="post">
+    <input type="text" name="email"></input>
+    <input type="submit" value="Signup"></input>
+  </form>
+
+  <a href="rumijawi">rumi jawi</a>
+</body>
+
+</html>

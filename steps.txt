@@ -1,0 +1,18 @@
+gcloud init /* if not initialize
+gcloud create projects <ID> /* min 6 characters
+gloud create app --project <ID> /* setup app engine
+
+gcloud create projects example-bmi
+gcloud create app --project example-bmi /* create app engine
+
+finally, I under stand. a gloud project can be anything; app engine, compute,
+storage etc. thus, we create a project, then create an app engine for then
+project.
+
+project -> app engine
+
+
+gcloud projects list
+gcloud config set project <ID>
+
+gcloud config set project example-bmi
