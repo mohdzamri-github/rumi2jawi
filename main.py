@@ -16,7 +16,7 @@ import codecs
 import re
 
 # read rumi jawi data
-f = codecs.open("rumi-jawi-unicode.txt", mode="r", encoding='utf-8')
+f = open("rumi-jawi-unicode.txt", mode="r", encoding='utf-8')
 rjDict1 = {}
 rjDict2 = {}
 rjDict3 = {}
@@ -32,7 +32,7 @@ for line in f:
         rjDict3[r] = j
 
 # read name data base
-g = codecs.open("name-db.txt", mode="r", encoding='utf-8')
+g = open("name-db.txt", mode="r", encoding='utf-8')
 nDict = {}
 for line in g:
     line = line.strip()
@@ -158,8 +158,8 @@ def rumijawi():
 
     # Fetch the most recent 10 access times from Datastore.
     times = fetch_times(10)
-    
-    return render_template('rumijawi.html', times=times, 
+
+    return render_template('rumijawi.html', times=times,
                            latest_changes=latest_changes)
 
 

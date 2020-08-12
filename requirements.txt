@@ -5,10 +5,12 @@
 #
 # Note: The `lib` directory is added to `sys.path` by `appengine_config.py`.
 # Flask==0.10
-click==7.1.2
-Flask==1.1.2
-itsdangerous==1.1.0
-Jinja2==2.11.2
-MarkupSafe==1.1.1
-Werkzeug==1.0.1
-google-cloud-datastore==1.13.2
+click
+Flask
+itsdangerous
+Jinja2
+MarkupSafe
+Werkzeug
+google-cloud-datastore
+testresources
+launchpadlib
