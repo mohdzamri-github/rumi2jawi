@@ -1,119 +1,470 @@
-ayishah, عائشة
-aisha, عائشة
-aishah, عائشة
-ayesha, عائشة
-ayeshah, عائشة
-a'isha, عائشة
-'aisha, عائشة
-ali, عالي
-aminah, آمنة أمينة
-amir, عامر آمر 
-aamir, عامر
-abbas, عبّاس
-abdullah, عبد الله
-abdulla, عبد الله
-abrar, أبرار
-abu, أبو
-adam, آدم
-adnan, عدنان
-afif, عفيف
-ahmad, أحمد
-ahmed, أحمد
-aiman, أيمن 
-ayman, أيمن
-akilah, عقيلة عاقلة
-aqila, عقيلة عاقلة
-alia, علياء
-alya, علياء
-aliya, عليّة
-aliyah, عليّة
-aliyya, عليّة
-aliyyah, عليّة
-amin, أمين
-amirah, أميرة
-amira, أميرة
-ammar, عمّار
-anas, أنس
-anis, أنيس
-anwar, انصار
-aqil, عاقل عقيل
-arif, عارف
-asma, أسمى
-zulaikha, زليخا
-zulekha, زليخا
-zulaykha, زليخا
-zubaidah, زبيدة
-zubaida, زبيدة
-zainab, زينب
-zaynab, زينب
-zaman, زمان
-zaki, زكيّ
-zakiah, زكيّة
-zakaria, زَكَرِيّا
-zakariya, زَكَرِيّا
-zakariyya, زَكَرِيّا
-zain, زين
-zayn, زين
-zaid, زيد
-zayd, زيد
-noor, نور 
-nur, نور 
-nor, نور 
-noora, نورة نورا
-nora, نورا نورة
-norah, نورا نورة
-noura, نورا نورة
-nuha, نهى
-nurul, نور ال (asalnya nur al-) 
-omar, عمر
-umar, عمر
-othman, عثمان
-uthman, عثمان
-ramlah, رملة
-rashid, راشد رشيد
-rashed, راشد رشيد
-rasheed, راشد رشيد
-rauf, رؤوف
-ridhwan, رضوان
-ridwan, رضوان
-rizwan, رضوان
-ruqayya, رقيّة
-ruqayyah, رقيّة
-rokiah, رقيّة
-sabri, صبريّ
-safiyah, صفيّة
-safiyyah, صفيّة
-safiya, صفيّة
-saiful, سيف ال (asalnya sayf al-)
-saifullah, سيف الله
-sakinah, سكينة
-sakina, سكينة
-saleem, سليم سالم 
-salim, سليم سالم
-salih, صالح
-salleh, صالح
-saleh, صالح
-salha, صالحة
-salima, سليمة
-salimah, سليمة
-salma, سلمى
-samad, صمد
-sarah, سارة
-sara, سارة
-shafiq, شفيق
-shafiqah, شفيقة
-shafiqa, شفيقة
-shahira, شهيرة
-shakir, شاكر
-shamil, شاميل
-shamsuddin, شَمس الدين
-sharifah, شريفة
-sharifa, شريفة
-sharif, شريف
-suraya, ثريّا ثريّة
-taha, طه
-tasnim, تسنيم
-taufik, توفيق
-toufik, توفيق
-umar, عمر
-omar, عمر
+﻿amin, اَمِين
+haris, حَرِيس
+rahmah, رَحْمه
+rahim, رَحِيم
+rauf, رَؤُف
+shahid, شَاهِد
+shafiq, شَفِيع
+sadiq, صَادِق
+qasim, قَاسِم
+mubin, مُبِيْن
+mukhtar, مُخْتَار
+mokhtar, مَخْتَار
+mustafa, مُصْطَفى
+hadi, هَادِي
+idris, اِدْرِيْس
+adam, آدَم
+ishak, اِسْحَاق
+ishaq, اِسْحَاق
+ismail, اِسْمَاعِيل
+ilyas, اِلْيَاس
+ayyub, اَيُّوب
+ayub, اَيُّوب
+daud, دَاود
+dawud, دَاود
+zakariyya, زَكَرِيَّا
+zakaria, زَكَرِيَّا
+zulkifli, ذُوالْكِفْل 
+zulkefli, ذُوالْكِفْل
+sulaiman, سُلَيْمَان
+shuib, شُعَيب
+salih, صَالِح
+salleh, صَالِح
+saleh, صَالِح
+isa, عِيْسى
+lut, لُوْط
+musa, مُوْسى
+nuh, نُوح
+noh, نُوح
+harun, هارُون
+haron, هارُون
+hud, هُود
+yahya, يَحْيى
+yaqkub, يَعْقُوْب
+yakkub, يَعْقُوْب
+yakqub, يَعْقُوْب
+yusuf, يُوسُف
+yosuf, يُوسُف
+yusuff, يُوسُف
+yousuf, يُوسُف
+yousof, يُوسُف
+yunus, يُوْنُس
+khadijah, خَدِيْجَة
+saudah, سَوْدَة
+ayishah, عَائِشَه
+aishah, عَائِشَه
+ayisha, عَائِشَه
+ayeshah, عَائِشَه
+hafshah, حَفْصَة
+zainab, زَيْنَب
+salamah, سَلَمه
+umm, اُمّ
+juwairiyah, جُوَيْرِيَه
+ramlah, رَمْلَه
+habibah, ؟
+safiyyah, صَفِيَّه
+maimunah, مَيْمُونَه
+mariyah, ماريه
+jamilah, جميله
+raihanah, ريحانه
+kulthum, كُلْثُوم
+kalthum, كُلْثُوم
+kolthum, كُلْثُوم
+ruqayyah, رُقَيَّة
+ruqayya, رُقَيَّة
+rokiah, رُقَيَّة
+fatimah, فَاطِمَة
+qasim, قَاسِم
+abbas, عَبَّاس
+abrar, اَبْرَار
+adil, عَادِل
+adnan, عَدْنَان
+affan, عَفَّان
+ahad, اَحَد
+ahmad, اْحمَد
+ahmar, اَحْمَر
+ahsan, اَحْسَن
+akif, عَاكِف
+akil, اَكِيل
+akram, اَكْرَم
+ali, عَلِي
+amim, اَمِيم
+amin, اَمِين
+amir, اَمِير
+ammar, عَمّّار
+amr, عَمْرو
+anil, اَنِيْل
+anis, اَنِيْس
+anwar, اَنْوَرْ
+aqib, عَاقِب
+aqil, عَاقِل عَاقِيل
+aqmar, اَقْمَر
+arif,  عَرِيف عَارِف
+arqam, اَرْقَم
+arshad, اَرْشَد
+asim, عَاصِم عَصِيم
+atiyyah, عَطِيَّه
+ayyub, اَيُّوب
+azhar, اَزْهر
+azim, عَازِم عَزِيم
+bakr, بَكْر
+bakir, بَاكِر
+bashir, بَشِير
+basir, بَصِير
+basit, بَسِيط بَسَط
+buhairah, بُحَيْرَه
+burhan, بُرْهَان
+dabir, دَابِر
+daim, دَائِم
+dawud, دَاود
+dhulkifli, ذُوالْكِفْل
+zulkifli, ذُوالْكِفْل
+fadil, فَاضِل
+fahim, فَهِيم
+faisal, فِيصَل
+faiz, فَائِز
+fakhir, فَاخِر
+farah, فَرَح
+farhan, فَرْحَان
+farhat, فَرْحَت
+farid, فَرِيد
+faruq, فَارُوق
+faruk, فَارُوق 
+farook, فَارُوق
+fatih, فَاتِح
+fuad, فُؤَاد
+furqan, فُرْقَان
+ghaffar, غَفَّار
+ghafir, غَافِر
+ghalib, غَالِب
+ghani, غَنِي
+ghazi, غَازِي
+habib, حَبِيب
+hadi, هَادِي
+hafiz, حَفِيظ
+hakim, حَكِيم
+halim, حَلِيم
+hamd, حَمْد
+hamdan, حمدان
+hamid, حَمِيد حَامِد
+hanif, حَنِيف
+harij, حَرِيج
+harith, حَرِيث
+harun, هَارُون
+hasan, حَسَن
+hassan, حَسَّان
+hashir, حَاشِر
+hilal, هِلَال
+hussain, حُسَيْن
+hussein, حُسَيْن
+husain, حُسَيْن
+ibrahim, اِبْرَاهِيم
+idris, اِدرِيْس
+ikram, اِكْرَام
+imran, عِمْرَان
+imad, عَمَاد
+imtiyaz, اِمْتِيَاز
+irfan, عِرْفَان
+irshad, اِرْشَاد
+isa, عيسىَ
+isam, عِصَام
+ismail, اِسْمَاعِيل
+ismael, اِسْمَاعِيل
+jalal, جَلَال
+jalil, جَليل
+jamal, جَمَال
+jamil, جَمِيل
+kamal, كَمَال
+karim, كَرِيم
+kazim, كَاظِم
+khairah, خَيْرَه
+khairun, خَيْرُون 
+khalid, خَلِيد خَالِد
+khalil, خَلِيْل
+latif, لَطِيف
+luqman, لُقْمَان
+latef, لَطِيف
+lateef, لَطِيف
+lukman, لُقْمَان
+lokman, لُقْمَان
+maan, مَعْن
+mahdi, مَهْدِي
+mahmud, مَحْمُود
+maimun, مَيْمُون
+maisarah, مَيْسَرَه
+majid, مَاجِد
+malik, مَالِك
+makmar, مَعْمَر
+mamun, مَامُون
+mansur, مَنْصُور
+mansor, مَنْصُور
+marjan, مَرْجَان
+mathil, مَاثِل
+matin, مَتِين
+munawwar, مُنَوَّر
+misbah, مِصْبَاح
+miskin, مِسْكِين
+muazzam, مُعَظَّم
+mubarak, مُبَارَك
+mubashir, مُبَشِّر
+mubin, مُبِين
+mufti, مُفْتِي
+muhammad, مُحَمَّد
+mohd, مُحَمَّد
+mohammed, مُحَمَّد 
+muhsin, مٌحْصِن مٌحْسِن
+muid, مُعِيد
+mujahid, مُجَاهِد
+mukhtar, مُخْتَار
+mokhtar, مُحْتَار
+mumtaz, مُمْتَاز
+munim, مُنْعِم
+muqtada, مُقْتَدَي
+murshid, مُرْشِد
+musa, مُوْسَي
+muslim, مُسْلَم
+muktasim, مُعْتَصِم
+muqtasim, مُعْتَصِم
+mutiq, مُطِيع
+muzaffar, مُظَفَّر
+muzzammil, مُزَّمِّل
+nadir, نَضِير نَاضِر
+nafiq, نَافِع
+naim, نَعِيم
+najm, نَجْم
+nasir, نَاصِر نَصِير
+naseer, نَاصِر نَصِير
+nuh, نُوح
+noh, نُوح
+nuqman, نُعْمَان
+nukman, نُعْمَان
+nur, نُور
+nor, نُور
+noor, نُور
+qamar, قَمَر
+rabbani, رَبَّاني
+rabib, رَبِيب
+rabit, رَبِيط
+rafik, رَافِع رَفَيع
+rafiq, رَفِيق
+rahil, رَحِيل
+rahim, رَحِيم
+rahmat, رَحْمَت
+raihan, رَيْحَان
+rashid, رَاشِد رَشِيد
+rasheed, رَاشِد رَشِيد
+ratib, رَطِيب
+raziq, رَازِق
+ridwan, رِصْوَان
+ridhwan, رِصْوَان
+sabir, صَابِر صَبِير
+saad, سَعْد
+saqdan, سَعْدَان
+sadiq, صَادِيد
+saffah, صَفَّاح
+safran, صَفْرَان
+safwan, صُفْوَان
+sahir, سَاهِر
+saib, صَائِب
+said, سَعِيد
+salam, سَلَم
+salamah, سَلَامَه
+salih, صَالِح
+saleh, صَالِح
+salleh, صَالِح 
+salik, سَلِيك
+salim, سَلِيم
+saleem, سَلِيم
+salem, سَلِيم
+salkan, سَلْكَان
+salmah, سَلْمَه
+salman, سَلْمَان
+samad, صَمَد
+samid, صَمِيد
+sarif, صَرِيف
+sariyah, سَارِيه
+saud, صَعُوج سَعُود
+sayyib, صَيِّب
+shafiq, شَافِع شَفِع 
+shahid, شَهِد
+shakir, شَاكِر
+shuaib, شُعَيْب
+siraj, سِرَاج
+subhan, سُبْحَان
+sultan, سُلْطَان
+tahir, طَاهِر
+takrim, تَكْرِيم
+talhah, طَلْحَه
+talib, طَالِب
+taqi, تَقِي
+tasnim, تَسْنِيْم
+umar, عُمَر
+omar, عُمَر
+wahab, وَهَب
+wahid, وَحِيد
+walid, وَلِيد
+yahya, يَحْيَ
+yaqkub, يَعْقُوب
+yasir, يَاسِر
+yazid, يَزِيد
+yunus, يُونُس
+yusuf, يُوسُف
+yusof, يُوسُف
+yousof, يُوسُف
+abidah, 
+adilah, 
+adilah, 
+afiyah, 
+aini, 
+ayishah, 
+aishah, 
+aisha, 
+aliyah, 
+aman, 
+amilah, 
+aminanh, 
+amirah, 
+anisah, 
+aqilah, 
+arifah, 
+asifah, 
+asma, 
+atifah, 
+atiqah, 
+atiyyah, 
+atiyah, 
+azimah, 
+barirah, 
+basharah, 
+basamah, 
+bushra, 
+dahwah, 
+daniyah, 
+dhikra, 
+dhakirah, 
+duha, 
+fadilah, 
+faizah, 
+farah, 
+farhanah, 
+farhin, 
+farshah, 
+fasihah, 
+fatahah, 
+firdous, 
+fauziyah, 
+fauziah, 
+habibah, 
+hajirah, 
+halimah, 
+hamdah, 
+hamidah, 
+hamilah, 
+hanifah, 
+hasna, 
+hassananh, 
+hijab, 
+huda, 
+humaira, 
+husna, 
+iman, 
+izzah, 
+jamilah, 
+khalidah, 
+kubra, 
+laila, 
+mataq, 
+mahmudah, 
+maidah, 
+maimunah, 
+mardiyyah, 
+mardiyah, 
+maryam, 
+mariam, 
+masturah, 
+misbah, 
+mumtaz, 
+munirah, 
+nadirah, 
+nadiyah, 
+nailah, 
+nailah, 
+naimah, 
+najiyah, 
+najwa, 
+nakhilah, 
+nasirah, 
+nasiyah, 
+nikmat, 
+niqmat, 
+qaidah, 
+qanitah, 
+qasirah,
+qurrat-ul-ain
+qurratul-ain, 
+rabiah, 
+rafiah, 
+rafidah, 
+rahil, 
+rahilah, 
+raihanah, 
+rashidah, 
+rawdah, 
+ridwananh, 
+ruqayyah, 
+sabirah, 
+sadiyah, 
+saadiah, 
+saqdiah, 
+sadiah, 
+safinah, 
+safirah, 
+sahirah, 
+saidah, 
+saimah, 
+sajidah, 
+sakinah, 
+salamah, 
+salihah, 
+salimah, 
+salamah, 
+salimah, 
+salma, 
+salwa, 
+samiah, 
+samidah, 
+saminanh, 
+samiyah, 
+samma, 
+samrah, 
+samya, 
+samiyyah, 
+shariqah, 
+saiqah, 
+sariyah, 
+saudah, 
+saodah, 
+shafiah, 
+shakirah, 
+shakilah, 
+sharifah, 
+suhailah, 
+sumairah, 
+sumayyah, 
+sumayah, 
+tahsin, 
+tasnim, 
+ubaidah, 
+uzma, 
+wafa, 
+wafiyah, 
+wahidah, 
+wajidah, 
+walidah, 
+waqidah, 
+zafirah, 
+zahidah, 
+zahra, 
+zakiyah, 
+zakiah, 
+zubaidah, 
