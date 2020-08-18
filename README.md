@@ -7,3 +7,5 @@ gunicorn
 cloud init
 <select account and project>
 gunicorn -b :8090 --reload --max-requests 1 main:app
+
+better unicode support

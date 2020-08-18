@@ -11,7 +11,6 @@ app = Flask(__name__)
 # latest changes
 latest_changes = "8-8-2020"
 
-import codecs
 
 import re
 
@@ -85,26 +84,27 @@ def page_not_found(e):
 
 # https://cloud.google.com/appengine/docs/standard/python3/building-app/storing-and-retrieving-data
 
-from google.cloud import datastore
+# No need. just cosmetic from book exercise.
+# from google.cloud import datastore
 
-datastore_client = datastore.Client()
+# datastore_client = datastore.Client()
 
-def store_time(dt):
-    entity = datastore.Entity(key=datastore_client.key('visit'))
-    entity.update({
-        'timestamp': dt
-    })
+# def store_time(dt):
+#     entity = datastore.Entity(key=datastore_client.key('visit'))
+#     entity.update({
+#         'timestamp': dt
+#     })
 
-    datastore_client.put(entity)
+#     datastore_client.put(entity)
 
 
-def fetch_times(limit):
-    query = datastore_client.query(kind='visit')
-    query.order = ['-timestamp']
+# def fetch_times(limit):
+#     query = datastore_client.query(kind='visit')
+#     query.order = ['-timestamp']
 
-    times = query.fetch(limit=limit)
+#     times = query.fetch(limit=limit)
 
-    return times
+#     return times
 
 @app.route('/transliterate', methods=['POST'])
 def transliterate():
@@ -113,35 +113,37 @@ def transliterate():
     #print "hello world"
     #print("The email address is in signup function '" + email + "'")
 
-    rumi.lower().strip()
+    # rumi.lower().strip() ## no effect ~~ 8/8/2020
 
-    if rumi in rjDict1:
-        if rumi in rjDict2 and rumi in rjDict3:
+    r = rumi.lower().strip()
+
+    if r in rjDict1:
+        if r in rjDict2 and r in rjDict3:
             return render_template('transliterate.html',
-                                   rumi=rumi,
-                                   jawi=rjDict1[rumi],
-                                   jawi2=rjDict2[rumi],
-                                   jawi3=rjDict3[rumi],
+                                   rumi=r,
+                                   jawi=rjDict1[r],
+                                   jawi2=rjDict2[r],
+                                   jawi3=rjDict3[r],
                                    latest_changes=latest_changes)
-        elif rumi in rjDict2:
+        elif r in rjDict2:
             return render_template('transliterate.html',
-                                   rumi=rumi,
-                                   jawi=rjDict1[rumi],
-                                   jawi2=rjDict2[rumi],
+                                   rumi=r,
+                                   jawi=rjDict1[r],
+                                   jawi2=rjDict2[r],
                                    latest_changes=latest_changes)
         else:
             return render_template('transliterate.html',
-                                   rumi=rumi,
-                                   jawi=rjDict1[rumi],
+                                   rumi=r,
+                                   jawi=rjDict1[r],
                                    latest_changes=latest_changes)
     else:
-        guest1 = edits1(rumi)
+        guest1 = edits1(r)
         guest2 = []
         for c in guest1:
             if c in rjDict1:
                 guest2.append(c)
         return render_template('not_found_transliterasi.html',
-                               rumi=rumi,
+                               rumi=r,
                                guesses=guest2,
                                latest_changes=latest_changes)
     # return pass
@@ -154,14 +156,14 @@ def transliterate():
 @app.route('/rumijawi')
 def rumijawi():
     # Store the current access time in Datastore.
-    store_time(datetime.datetime.now())
+    # store_time(datetime.datetime.now())
 
     # Fetch the most recent 10 access times from Datastore.
-    times = fetch_times(10)
+    # times = fetch_times(10)
 
-    return render_template('rumijawi.html', times=times,
-                           latest_changes=latest_changes)
-
+    #return render_template('rumijawi.html', times=times,
+    #                       latest_changes=latest_changes)
+    return render_template('rumijawi.html', latest_changes=latest_changes)
 
 @app.route('/rumijawi_paragraph')
 def rumijawi_paragraph():

@@ -68,14 +68,40 @@
     Please input name in rumi. Sila masukkan nama dalam rumi.
     <p>
     <form action="/transliterate_name" method="post">
-      <textarea name="rumi" style="resize: none;" rows=1 cols="60" autofocus="autofocus"
-        placeholder="nama dalam ejaan rumi"></textarea><br>
-      <input type="submit" value="transliterasi nama"></input>
+      <!-- <textarea name="rumi" style="resize: none;" data-limit-rows="true" rows="1" cols="40" autofocus="autofocus"
+        placeholder="nama dalam ejaan rumi"></textarea><br> -->
+        <input name="rumi" type="text" placeholder="nama">
+      <!-- <input type="submit" value="transliterasi nama"></input> -->
+      <button class="btn btn-primary" name="_submit" type="submit" value="transliterate">transliterate</button>
     </form>
     </p>
     <div class="well well-lg">
       <h2>Perhatian</h2>
 
+      <p>Transliterasi nama adalah satu yang susah. Andaian adalah, kebanyak nama Melayu adalah berasalkan dari nama
+        Arab yang membawa makna-makna yang baik-baik. Namum, terdapat pelbagai variasi ejaan/transliterasi untuk nama
+        Arab.
+        <br>
+        Sebagai contoh, nama Arab (عَائِشه) boleh ditransliterasi dengan ayishah, ayeeshah, aishah, aisha, ayeshah dan
+        beberapa variasi
+        lain. Oleh itu agak penting untuk mengetahui variasi nama untuk mendapatkan ejaan Arab yang tepat dan makna yang
+        baik.
+        <br>
+        nama "zamri", umpamanya boleh dieja dengan (zamri, ظَامرِي ظَمرِي زَمري زَمرِ زَامرِي) .
+        <br> nama (rokiah) mungkin berasal dari ruqayyah(رُقَيَّه) .
+        <br>
+        nama (nuraini) mungkin berasal dari (nur aini)(نُور عَيْنِي).
+        <br>
+        Penggunaan wakil untuk huruf ain sebagai "'' sudah tidak digunakan. Sebagai contoh, (عَيْنِي) dieja sebagai
+        aini.
+        <br> nama (يُوسُف) mempunyai beberapa ejaan; yusof, yousuf, yosof, dll.
+        <br> nama (mat'il) mungkin berasal dari nama (ismail), kerana penggunaan loghat Kelantan.
+        <br> Sekiranya ada senarai nama yang boleh dikongsi. mohon panjangkan supaya senarai nama boleh dikembangkan.
+        <br> Harapan kami agar kita dapat menulis nama dalam Jawi secara betul dan nama itu membawa makna-makna yang
+        baik.
+        <br> jumlah nama: 479. Rujukan ejaan: Disctionary of Islamic Names: derived from the Quran, Ahadith and Seerah.
+        Prof. Hafiz Shaukat Ali Hareeri. Maktaba Dar-us-Salam. 2009.
+      </p>
 
     </div>
     <hr>
