@@ -5536,8 +5536,8 @@ berian,برين
 berberi-berian,بربري-برين
 diberi,دبري
 diberikan,دبريکن
-memberi,ممڤري
-memberikan,ممڤريکن
+memberi,ممبري
+memberikan,ممبريکن
 pemberi,ڤمبري
 pemberian,ڤمبرين
 beri,بيري
