@@ -69947,7 +69947,7 @@ digembalakan,دݢمبالاکن
 digemburkan,دݢمبورکن
 digerak-gerakkan,دݢرق٢کن
 digeserkan,دݢيسيرکن
-dighairahkan,د‌غاءيرهکن
+dighairahkan,دغاءيرهکن
 digilapkan,دݢيلڤکن
 digilingkan,دݢيليڠکن
 diglobalkan,دݢلوبلکن

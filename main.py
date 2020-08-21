@@ -54,14 +54,16 @@ for line in f:
 
 # read name data base
 g = open("name-db.txt", mode="r", encoding='utf-8')
-nDict = {}
+nDict: Dict[str, str] = {}
 for line in g:
     line = line.strip()
     r, j = line.split(",")
     nDict[r] = j
 
 # just keys == rumi
-keysDict = rjDict1.keys()
+# keysDict = rjDict1.keys()
+
+keys = list(rjDict1)
 
 # norvig
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
@@ -143,7 +145,7 @@ def transliterate():
 
     r = rumi.lower().strip()
 
-    # similar words
+    # similar words beli, belian, belian, etc belia
     r2: Dict[str, str] = {}
 
     if r in rjDict1:
@@ -162,9 +164,15 @@ def transliterate():
         #                            latest_changes=latest_changes)
         # else:
         # beli -> belian, pembelian, pembeli, etc
-        for k in keysDict:
-            if re.search(r, k):
-                r2[k] = k
+        # for k in keysDict:
+        #     if re.search(r, k):
+        #         r2[k] = k
+        # for k in rjDict1.keys():
+        #     if re.search(r, k):
+        #         r2[k] = k
+        for k in keys:
+            if re.search(str(r),str(k)):
+                r2[k] = rjDict1[k]
         return render_template('transliterate.html',
                                rumi=r,
                                jawi=rjDict1[r],
