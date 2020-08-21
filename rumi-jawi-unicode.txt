@@ -27964,8 +27964,8 @@ berkutu-kutuan,برکوتو-کوتوان
 mengutui,مڠوتوءي
 kutub,قطب
 berkutub,برقطب
-kekutuban,کقوط¬¬¬وبن¬
-pengutuban,ڤڠوط¬¬¬وبن¬
+kekutuban,کقوطوبن
+pengutuban,ڤڠوطوبن
 kutubkhanah,کتبخانه
 kutuk,کوتوق
 keterkutukan,کترکوتوقن

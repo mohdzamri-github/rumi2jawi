@@ -170,12 +170,16 @@ def transliterate():
         # for k in rjDict1.keys():
         #     if re.search(r, k):
         #         r2[k] = k
+        # rjDict1[k] is a list. 21/8/2020
+        # need to convert list to string
         for k in keys:
             if re.search(str(r),str(k)):
-                r2[k] = rjDict1[k]
+                r2[k] = ' '.join(rjDict1[k])
+        jawi = rjDict1[r]
+        jawi = ' '.join(jawi)
         return render_template('transliterate.html',
                                rumi=r,
-                               jawi=rjDict1[r],
+                               jawi=jawi,
                                r2=r2,
                                latest_changes=latest_changes)
     else:
