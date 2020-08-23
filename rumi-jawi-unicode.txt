@@ -58057,6 +58057,7 @@ luyu,لويو
 luyut,لويوت
 berluyutan,برلويوتن
 meluyut,ملويوت
+xxxx,xxxxx added
 januari,جانواري
 februari,فيبرواري
 mac,مچ

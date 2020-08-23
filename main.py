@@ -40,6 +40,8 @@ rjDict1: Dict[str, List[str]] = {1: [1]}
 # rjDict2: Dict[str, str] = {1: [1]}
 # rjDict3: Dict[str, str] = {1: [1]}
 
+# read line, append if homograph
+
 for line in f:
     line = line.strip()
     r, j = line.split(",")
@@ -172,11 +174,14 @@ def transliterate():
         #         r2[k] = k
         # rjDict1[k] is a list. 21/8/2020
         # need to convert list to string
+
+        # search for similar words: beli, belian, pembelian
         for k in keys:
             if re.search(str(r),str(k)):
                 r2[k] = ' '.join(rjDict1[k])
         jawi = rjDict1[r]
         jawi = ' '.join(jawi)
+
         return render_template('transliterate.html',
                                rumi=r,
                                jawi=jawi,
