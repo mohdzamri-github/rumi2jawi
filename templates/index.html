@@ -3,7 +3,19 @@
 
 {% block content %}
 
-Hello world
+<div class="container">
+  <form action="" method="post" novalidate>
+
+    <p>
+      {{ form.rumi.label }} <br>
+      {{ form.rumi(size=32) }}
+    </p>
+    <p>
+      {{ form.submit() }}
+    </p>
+  </form>
+</div>
+
 
 {% endblock %}
 
