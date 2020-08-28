@@ -10,10 +10,7 @@ from typing import Dict, List
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 
-
-from typing import Dict, List
 import re
-from typing import Dict, List
 
 
 config = {
@@ -104,9 +101,10 @@ def edits2(word):
     return set(e2 for e1 in edits1(word) for e2 in edits1(e1))
 
 
-class RumiJawi(FlaskForm):
-    rumi = StringField('kata melayu', validators=[DataRequired()])
-    submit = SubmitField('submit')
+class RumiForm(FlaskForm):
+    rumi = StringField('kata rumi', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+
 
 # @app.route('/')
 # def hello():
@@ -128,35 +126,6 @@ def page_not_found(e):
     return 'Sorry, Nothing at this URL.', 404
 
 
-# @app.errorhandler(500)
-# def page_not_found(e):
-#     """Return a custom 500 error."""
-#     return 'Sorry, unexpected error: {}'.format(e), 500
-
-
-# https://cloud.google.com/appengine/docs/standard/python3/building-app/storing-and-retrieving-data
-
-# No need. just cosmetic from book exercise.
-# from google.cloud import datastore
-
-# datastore_client = datastore.Client()
-
-# def store_time(dt):
-#     entity = datastore.Entity(key=datastore_client.key('visit'))
-#     entity.update({
-#         'timestamp': dt
-#     })
-
-#     datastore_client.put(entity)
-
-
-# def fetch_times(limit):
-#     query = datastore_client.query(kind='visit')
-#     query.order = ['-timestamp']
-
-#     times = query.fetch(limit=limit)
-
-#     return times
 
 @app.route('/transliterate', methods=['POST'])
 # @cache.cached(timeout=50)
@@ -199,6 +168,7 @@ def transliterate():
         # need to convert list to string
 
         # search for similar words: beli, belian, pembelian
+        # keys = list(rjDict1)
         for k in keys:
             if re.search(str(r), str(k)):
                 r2[k] = ' '.join(rjDict1[k])
@@ -240,15 +210,52 @@ def rumijawi():
     #                       latest_changes=latest_changes)
     return render_template('rumijawi.html', latest_changes=latest_changes)
 
-
 @app.route('/index', methods=['GET', 'POST'])
 def index():
     rumi = ''
+    d = []
+    form = RumiForm()
     jawi = ''
-    form = RumiJawi()
 
-    # return render_template('index.html')
-    return render_template('index.html', form=form, latest_changes=latest_changes)
+    if form.validate_on_submit():
+        rumi = form.rumi.data
+        form.rumi.data = ''
+        # return render_template('index.html', form=form, melayu=melayu, d=d)
+
+    if rumi == '':
+        return render_template('index.html', form=form, rumi=rumi)
+
+    r = rumi.lower().strip()
+
+    # similar words beli, belian, belian, etc belia
+    r2: Dict[str, str] = {}
+
+    if r in rjDict1:
+        # search for similar words: beli, belian, pembelian
+        # keys = list(rjDict1)
+        for k in keys:
+            if re.search(str(r), str(k)):
+                r2[k] = ' '.join(rjDict1[k])
+        jawi = rjDict1[r]
+        jawi = ' '.join(jawi)
+
+        return render_template('index.html',
+                               rumi=r,
+                               form=form,
+                               jawi=jawi,
+                               r2=r2,
+                               latest_changes=latest_changes)
+    else:
+        guest1 = edits1(r)
+        guest2 = []
+        for c in guest1:
+            if c in rjDict1:
+                guest2.append(c)
+        return render_template('not_found_transliterasi.html',
+                               rumi=r,
+                               guesses=guest2,
+                               latest_changes=latest_changes)
+
 
 
 @app.route('/rumijawi_paragraph')

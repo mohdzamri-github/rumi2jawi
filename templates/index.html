@@ -1,28 +1,93 @@
 {% extends "base.html" %}
 
-
 {% block content %}
-
-<div class="container">
-  <form action="" method="post" novalidate>
-
-    <p>
-      {{ form.rumi.label }} <br>
-      {{ form.rumi(size=32) }}
-    </p>
-    <p>
-      {{ form.submit() }}
-    </p>
-  </form>
+<div>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/overview">Overview</a>
+        <a class="navbar-brand" href="/hubungi">Hubungi</a>
+        <a class="navbar-brand" href="/teknikal">Teknikal</a>
+        <a class="navbar-brand" href="/rumijawi">Rumi-Jawi</a>
+        <a class="navbar-brand" href="/rumijawi_paragraph">Rumi-Jawi peranggan</a>
+        <a class="navbar-brand" href="/nama">Transliterasi Nama</a>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
 </div>
 
 
+<br><br><br>
+
+<div class="container">
+  <h1>Transliterasi Rumi Jawi</h1>
+  <form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+      {{ form.rumi.label }}<br>
+      {{ form.rumi(size=32) }}
+    </p>
+    <p>{{ form.submit() }}</p>
+  </form>
+
+</div>
+
+<div class="container">
+  <p>
+  <h2> Kata Rumi:</h2>
+  <font size="+4">{{rumi}}</font>
+  </p>
+</div>
+
+<div class="container">
+  <h2>Transliterasi:</h2>
+  <p>
+    <font size="+4" face="Jawi Uthman Taha">{{rumi}}:{{jawi}}</font>
+  </p>
+  Similar Words / Perkataan hampir:
+  <p>
+  <ol>
+    {% for w in r2 %}
+    <li>{{w}} = <font size="+4" face="Jawi Uthman Taha">{{r2[w]}}</font>
+    </li>
+    {% endfor %}
+  </ol>
+
+
+</div>
+
+<div class="container">
+  <h2>Bahan untuk komputer</h2> Mohon muat-turun dan pasang bahan berikut di komputer anda untuk menulis dan membaca
+  Jawi dengan baik.
+  <ol>
+    <li>fon Jawi. <a href="/static/JawiUthmanTaha.ttf">Jawi
+        Uthman Taha</a>. Perlu untuk memaparkan 6 huruf tambahan Jawi.
+    </li>
+    <li> font Arabic/Jawi dari
+      <a href=https://www.google.com/get/noto />Google Noto</a>.
+      Perlu untuk memaparkan 6 huruf tambahan Jawi.
+      </br>
+    <li><a href="/static/NotoKufiArabic-hinted.zip">Noto Kufi Arabic</a> </li>
+    <li><a href="/static/NotoNashArabic-hinted.zip">Noto Nash Arabic</a> </li>
+    <li>Papan kekunci Jawi piawai UKM(2016) untuk Window 7/8/9/10. versi 19-10-2016.
+      <a href="/static/jawiukm.zip">JawiUKM</a>. Cara pasang papan kekunci.
+      <a href="/static/pasang_kekunci.pdf">Cara pasang kekunci</a>.
+    </li>
+    <li> sampel jawi dan fon. <a href="/static/sample_jawi_fonts.pdf">pdf</a> <a
+        href="/static/sample_jawi_fonts.docx">docx</a></li>
+  </ol>
+</div>
+
+<div class="container">
+  {% block footer %}
+  &copy; Copyright 2020 by zamri@ukm.edu.my</a>.
+  {% endblock %}
+</div>
+
+
+
 {% endblock %}
-
-
-
-
-
 
 
 
