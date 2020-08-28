@@ -57,18 +57,19 @@ rjDict1: Dict[str, List[str]] = {1: [1]}
 
 # read line, append if homograph
 
-
+# there are some double entry
+# abc, اني
+# abc, اني
+# not homograph
 for line in f:
     line = line.strip()
     r, j = line.split(",")
     if r not in rjDict1:
         rjDict1[r] = [j]
     else:
+        if ' '.join(rjDict1[r]) == j:
+            continue
         rjDict1[r].append(j)
-    # elif r not in rjDict2:
-    #     rjDict2[r] = j
-    # else:
-    #     rjDict3[r] = j
 
 # read name data base
 g = open("name-db.txt", mode="r", encoding='utf-8')
@@ -275,35 +276,49 @@ def transliterate_paragraph():
     # print "hello world"
     # print("The email address is in signup function '" + email + "'")
 
-    punc = ['.', ',', '?', ':', ';', '-', '(', ')', '!', '`', '"', '“']
-    punc_arab = ['.', ',', '؟', ':', '؛', '-', ')', '(', '!', '’', '"', '"']
+    punc =      ['.', ',','?',':', ';', '-','(',')','!', '`', '"', '“',"'",',',"' "]
+    punc_arab = ['.', ',','؟', ':', '؛', '-', ')','(', '!', '’', '"', '"',"'",',',"' "]
+
 
     paragraph_rumi = []
     paragraph_jawi = []
+    cannot_transliterasi = []
     rj = {}
     number_of_untransliterate = 0
-    for r in rumi:
+    for j in rumi:
+        r = j.strip().lower()
         if r.lower().strip() == '':
             continue
         if r.lower().strip() == ' ':
             continue
-        if r.lower() in rjDict1:
+        if r in rjDict1:
             paragraph_rumi.append(r)
-            paragraph_jawi.append(rjDict1[r.lower()])
-            rj[r] = rjDict1[r.lower()]
-        elif r.strip() in punc:
-            paragraph_rumi.append(r.strip())
-            paragraph_jawi.append(punc_arab[punc.index(r.strip())])
+            paragraph_jawi.append(' '.join(rjDict1[r])) # append string! not list 28/8/2020
+            rj[r] = rjDict1[r]
+        # elif r in punc:
+        #     paragraph_rumi.append(r)
+        #     paragraph_jawi.append(punc_arab[punc.index(r)])
+
+        # any single char such as (,), ? , etc
+        elif re.match("^.$",r):
+            paragraph_rumi.append(r)
+            paragraph_jawi.append(r)
+        # check if numbor
+        elif re.match("[0-9]",r):
+            paragraph_rumi.append(r)
+            paragraph_jawi.append(r)
         else:
             paragraph_rumi.append(r)
-            paragraph_jawi.append('؟'.decode('utf-8'))
+            paragraph_jawi.append('؟')
             number_of_untransliterate = number_of_untransliterate + 1
+            cannot_transliterasi.append(r)
 
     return render_template('transliterate_paragraph.html',
                            paragraph_rumi=paragraph_rumi,
                            paragraph_jawi=paragraph_jawi,
                            number_of_untransliterate=number_of_untransliterate,
                            number_of_words=len(paragraph_jawi),
+                           rj=rj, cannot_transliterasi=cannot_transliterasi,
                            latest_changes=latest_changes)
     # return pass
 

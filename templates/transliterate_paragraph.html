@@ -66,76 +66,44 @@
 
     <!-- Begin page content -->
     <div class="container">
-        <h1>&nbsp;</h1>
 
-        <h1>&nbsp;</h1>
+        Rumi dalam paragraf. Maksimun 2500 aksara.
+        <form action="/transliterate_paragraph" method="post">
+            <textarea name="rumi" style="resize: none;" rows=10 cols="100" maxlength=2500 autofocus="autofocus"
+                placeholder="tulis atau salin-dan-tampal perkataan rumi di sini"></textarea>
+            <br>
+            <input type="submit" value="transliterate"></input>
+        </form>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">Rumi-Jawi</div>
-            <div class="panel-body">
-                {% for r in paragraph_rumi %}
-                <font size="+2" face="Jawi Uthman Taha">{{r}}</font>&nbsp;(<font size="+2" face="Jawi Uthman Taha">
-                    {{paragraph_jawi[paragraph_rumi.index(r)]}}</font>)&nbsp;&nbsp;&nbsp;&nbsp; {% endfor %}
-            </div>
-        </div>
+        <!-- <h1>Rumi</h1> -->
+        <!-- {{paragraph_rumi}} -->
+        <h1>Rumi</h1>
+        {% for s in paragraph_rumi %}
+        <font size="+2">{{s}}</font>
+        {% endfor %}
+        <!-- <h1>Jawi</h1> -->
+        <!-- <p dir="rtl" lang="ar">
+            <font size="+2" face="Jawi Uthman Taha">{{paragraph_jawi}}</font>
+        </p> -->
+        <h1>Jawi</h1>
+        {% for s in paragraph_jawi %}
+        <font size="+2" face="Jawi Uthman Taha">{{s}}</font>
+        {% endfor %}
 
+        <h1>Rumi-Jawi</h1>
+        {% for s in paragraph_rumi %}
 
-        <div class="panel panel-default">
-            <div class="panel-heading">Rumi</div>
-            <div class="panel-body">
-                {% for r in paragraph_rumi %}
-                <font size=3>{{r}}</font> &nbsp;&nbsp; {% endfor %}
-            </div>
-        </div>
-
-
-
-        <div class="panel panel-default">
-            <div class="panel-heading">Jawi</div>
-            <div class="panel-body">
-                <p dir="rtl" lang="ar">
-                    {% for j in paragraph_jawi %}
-                    <font size="+3" face="Jawi Uthman Taha">{% print(j) %}</font> &nbsp; {% endfor %}
-                </p>
-            </div>
-        </div>
-
-        <div class="panel panel-default">
-            <div class="panel-heading">Statistik</div>
-            <div class="panel-body">
-                {{number_of_untransliterate}} perkataan tidak di transliterasi, {{number_of_words}} jumlah perkataan,
-                percentage: {{1- number_of_untransliterate/number_of_words}} peratusan perkataan yang berjaya di
-                transliterasi.
-            </div>
-        </div>
-
-        <div class="panel panel-default">
-            <div class="panel-heading">Rumi yang tidak di transliterasi</div>
-            <div class="panel-body">
-                {% for r in paragraph_rumi %}
-                {% if paragraph_jawi[paragraph_rumi.index(r)]=='؟' %}
-                <font size="+2" face="Jawi Uthman Taha"> {{r}} </font>
-                {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        <!-- {{paragraph_rumi}}
-<p>
-{{paragraph_jawi}} -->
-        <p>
-        <section>
-            Please input rumi paragraph.
-            <p>
-
-            <form action="/transliterate_paragraph" method="post">
-                <textarea name="rumi" style="resize: none;" rows=10 cols="100" autofocus="autofocus"
-                    placeholder="tulis atau salin-dan-tampal perkataan rumi di sini"></textarea>
-                <br>
-                <input type="submit" value="transliterate"></input>
-            </form>
-            <p>
-        </section>
-        <p>
+        <font size="+2">{{s}}</font>
+        <font size="+2" face="Jawi Uthman Taha">({{paragraph_jawi[paragraph_rumi.index(s)]}})</font>
+        {% endfor %}
+        <h1>Info</h1>
+        <p>Jumlah perkataan: {{number_of_words}}</p>
+        <p>Jumlah perkataan tidak boleh transliterasi: {{number_of_untransliterate}}</p>
+        <p>Peratusan transliterasi: {{ (number_of_words - number_of_untransliterate)/number_of_words }}</p>
+        <p>Tak boleh transliterasi:</p>
+        {% for s in cannot_transliterasi %}
+        {{s}}
+        {% endfor %}
         <footer class="footer">
             <p class="text-primary">More Information: zamri@ukm.edu.my.</p>
             <p class="text-primary">latest update: {{latest_changes}} </p>
