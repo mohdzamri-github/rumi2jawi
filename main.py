@@ -2,7 +2,7 @@ from flask import Flask, request
 from flask import render_template
 # from flask.ext.sqlalchemy import SQLAlchemy
 
-from flask_caching import Cache
+# from flask_caching import Cache
 
 from typing import Dict, List
 
@@ -24,7 +24,7 @@ app = Flask(__name__)
 # Note: We don't need to call run() since our application is embedded within
 # the App Engine WSGI application server.
 app.config.from_mapping(config)
-cache = Cache(app)
+# cache = Cache(app)
 
 # latest changes
 latest_changes = "8-8-2020"
@@ -136,7 +136,7 @@ def page_not_found(e):
 #     return times
 
 @app.route('/transliterate', methods=['POST'])
-@cache.cached(timeout=50)
+#@cache.cached(timeout=50)
 def transliterate():
     rumi = request.form['rumi']
     # print not working on browser
@@ -205,7 +205,7 @@ def transliterate():
 
 @app.route('/')
 @app.route('/rumijawi')
-@cache.cached(timeout=50)
+#@cache.cached(timeout=50)
 def rumijawi():
     # Store the current access time in Datastore.
     # store_time(datetime.datetime.now())
@@ -216,17 +216,22 @@ def rumijawi():
     # return render_template('rumijawi.html', times=times,
     #                       latest_changes=latest_changes)
     return render_template('rumijawi.html', latest_changes=latest_changes)
+    
 
+@app.route('/index')
+def index():
+    # return render_template('index.html')
+    return render_template('index.html', latest_changes=latest_changes)
 
 @app.route('/rumijawi_paragraph')
-@cache.cached(timeout=50)
+# @cache.cached(timeout=50)
 def rumijawi_paragraph():
     return render_template('rumijawi_paragraph.html',
                            latest_changes=latest_changes)
 
 
 @app.route('/transliterate_paragraph', methods=['POST'])
-@cache.cached(timeout=50)
+#@cache.cached(timeout=50)
 def transliterate_paragraph():
     rumi = request.form['rumi']
     rumi = re.split('(\W+)', rumi)
@@ -269,19 +274,19 @@ def transliterate_paragraph():
 
 
 @app.route('/overview')
-@cache.cached(timeout=50)
+#@cache.cached(timeout=50)
 def overview():
     return render_template('overview.html', latest_changes=latest_changes)
 
 
 @app.route('/teknikal')
-@cache.cached(timeout=50)
+#@cache.cached(timeout=50)
 def teknikal():
     return render_template('teknikal.html', latest_changes=latest_changes)
 
 
 @app.route('/hubungi')
-@cache.cached(timeout=50)
+#@cache.cached(timeout=50)
 def hubungi():
     return render_template('hubungi.html', latest_changes=latest_changes)
 
@@ -290,13 +295,13 @@ app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 
 @app.route('/nama')
-@cache.cached(timeout=50)
+#@cache.cached(timeout=50)
 def nama():
     return render_template('nama.html', latest_changes=latest_changes)
 
 
 @app.route('/transliterate_name', methods=['POST'])
-@cache.cached(timeout=50)
+#@cache.cached(timeout=50)
 def transliterate_name():
 
     rumi = request.form['rumi']
@@ -327,3 +332,5 @@ def transliterate_name():
                            name_rumi=name_rumi,
                            name_jawi=name_jawi,
                            guest2=guest2)
+
+
