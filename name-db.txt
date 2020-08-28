@@ -311,160 +311,168 @@ yunus, يُونُس
 yusuf, يُوسُف
 yusof, يُوسُف
 yousof, يُوسُف
-abidah, 
-adilah, 
-adilah, 
-afiyah, 
-aini, 
-ayishah, 
-aishah, 
-aisha, 
-aliyah, 
-aman, 
-amilah, 
-aminanh, 
-amirah, 
-anisah, 
-aqilah, 
-arifah, 
-asifah, 
-asma, 
-atifah, 
-atiqah, 
-atiyyah, 
-atiyah, 
-azimah, 
-barirah, 
-basharah, 
-basamah, 
-bushra, 
-dahwah, 
-daniyah, 
-dhikra, 
-dhakirah, 
-duha, 
-fadilah, 
-faizah, 
-farah, 
-farhanah, 
-farhin, 
-farshah, 
-fasihah, 
-fatahah, 
-firdous, 
-fauziyah, 
-fauziah, 
-habibah, 
-hajirah, 
-halimah, 
-hamdah, 
-hamidah, 
-hamilah, 
-hanifah, 
-hasna, 
-hassananh, 
-hijab, 
-huda, 
-humaira, 
-husna, 
-iman, 
-izzah, 
-jamilah, 
-khalidah, 
-kubra, 
-laila, 
-mataq, 
-mahmudah, 
-maidah, 
-maimunah, 
-mardiyyah, 
-mardiyah, 
-maryam, 
-mariam, 
-masturah, 
-misbah, 
-mumtaz, 
-munirah, 
-nadirah, 
-nadiyah, 
-nailah, 
-nailah, 
-naimah, 
-najiyah, 
-najwa, 
-nakhilah, 
-nasirah, 
-nasiyah, 
-nikmat, 
-niqmat, 
-qaidah, 
-qanitah, 
-qasirah,
-qurrat-ul-ain
-qurratul-ain, 
-rabiah, 
-rafiah, 
-rafidah, 
-rahil, 
-rahilah, 
-raihanah, 
-rashidah, 
-rawdah, 
-ridwananh, 
-ruqayyah, 
-sabirah, 
-sadiyah, 
-saadiah, 
-saqdiah, 
-sadiah, 
-safinah, 
-safirah, 
-sahirah, 
-saidah, 
-saimah, 
-sajidah, 
-sakinah, 
-salamah, 
-salihah, 
-salimah, 
-salamah, 
-salimah, 
-salma, 
-salwa, 
-samiah, 
-samidah, 
-saminanh, 
-samiyah, 
-samma, 
-samrah, 
-samya, 
-samiyyah, 
-shariqah, 
-saiqah, 
-sariyah, 
-saudah, 
-saodah, 
-shafiah, 
-shakirah, 
-shakilah, 
-sharifah, 
-suhailah, 
-sumairah, 
-sumayyah, 
-sumayah, 
-tahsin, 
-tasnim, 
-ubaidah, 
-uzma, 
-wafa, 
-wafiyah, 
-wahidah, 
-wajidah, 
-walidah, 
-waqidah, 
-zafirah, 
-zahidah, 
-zahra, 
-zakiyah, 
-zakiah, 
-zubaidah, 
+zahir, ظَاهِير
+zamri, ظَامرِي ظَمرِي زَمري زَمرِ زَامرِي
+abidah, عَابِدَه
+adilah, عَدِيلَه عَادِلَه
+afiyah, عَافِيَه
+aini, عَيْنِي
+ayishah, عَائِشه
+aishah, عَائِشه
+aisha, عَائِشه
+aliyah, عَالِيَه
+aman, اَمَان
+amilah, عَمِيلَه
+aminah, اَمِينَه آمِنَه
+amirah, عَمِيرَه عَامِرَه
+anisah, اَنِيسَه
+aqilah, عَاقِلَه
+arifah, عَارِفَه
+asifah, عَاصِفَه
+asma, اَسْمَا
+atifah, عَاطِفَه
+atiqah, عَتِيقَه
+atiyyah, عَطِيَّه
+atiyah, عَطِيَّه
+azimah, عَزِيمَه
+barirah, بَرِيره
+basharah, بَشَرَه
+basamah, بَسَمَه
+bushra, بُشْرَى
+dahwah, ضَحْوَه
+daniyah, دَانِيِه
+dhikra, ذِكْرى
+dhakirah, ذَاكِرَه
+duha, ضُحَى
+fadalah, فَضَالَه
+fadilat, فَضِيلَت
+faizah, فَائِزَه
+farah, فَرَح
+farhanah, فَرْحَانَه
+farhin, فَرْحِين
+farshah, فَرْشَه
+fasihah, فَصِحَه
+fatahah, فَتَاحَه
+firdous, فِرْدَوْس
+fauziyah, فَوْزِيِه
+fauziah, فَوْزِيِه
+habibah, حَبِيبَه
+hajirah, هَاجِرَه
+halimah, حَلِيمَه
+hamdah, حَمْدَه
+hamidah, حَمِيدَه
+hamilah, حَمِيلَه
+hanifah, حَنِيفشضه
+hasna, حَسْنَآء
+hassanah, حَسَّانَه
+hijab, حِجَاب
+huda, هُدَى
+humaira, حُمَيْرَاء
+husna, حُسْنَى
+iman, اَيمَان
+izzah, عِزَّه
+jamilah, جَمِيلَه
+khalidah, خَالِدَه
+kubra, كُبْرَى
+laila, لَيْلَي
+mataq, مَتَاء
+mahmudah, مَحْمُوْدَه
+maidah, مَائِدَه
+maimunah, مَيْمُونَه
+mardiyyah, مَرْضِيَّه
+mardiyah, مَرْضِيَّه
+maryam, مَرْيَم
+mariam, مَرْيَم
+masturah, مَسْتُوره
+misbah, مِصْبَاح
+mumtaz, مٌمْتَاز
+munirah, مُنِيرَه
+nadirah, نَضِيرَه
+nadiyah, نَادِيَه
+nailah, نَيْلَه نَائِلَه
+naimah, نَاعِمَه نَائِمَه
+najiyah, نَاجِيَه
+najwa, نَجْوَى
+nakhilah, نَخِيلَه
+nasirah, نَاصِرَه نَصِيرَه
+nasiyah, نَاصِيَه
+nikmat, نِعْمَت
+niqmat, نِعْمَت
+qaidah, قَعِيدَه
+qanitah, قَانِتَه
+qasirah, قَاصِرَه
+qurrat-ul-ain, قُرَّةُ العَيْن
+qurratul-ain, قَرَّةُ العَيْن
+rabiah, رَابِعَه
+rafiah, رَفِيعَه رَافِعَه
+rafidah, رَفِيدَه رَافِدَه
+rahil, رَحِيل
+rahilah, رَحِيلَه رَاحِلَه
+raihanah, رَيْحَانَه
+rashidah, رَشِيدَه رَاشِدَه
+rawdah, رُوْدَه
+ridwanah, رِضْوَانَه
+ruqayyah, رُقَيَّه
+rokiah, رُقَيَّه
+ruqayah, رُقَيَّه
+sabirah, صَبِيرَه
+sobirah, صَبِيرَه
+sabihah, صَبِيحَه
+sobihah, صَبِيحَه
+sadiyah, سَعْدِيَه
+saadiah, سَعْدِيَه
+saqdiah, سَعْدِيَه
+safinah, سَفِينَه
+safirah, سَفِيرَه
+sahirah, سَاحِرَه
+saidah, سَعِيدَه
+saimah, صَائِمَه
+sajidah, سَاجِدَه
+sakinah, سَكِينَه
+salamah, سَلَامَه
+salihah, صَالِحَه
+salimah, سَلِمَه سَلِيمَه
+salma, سَلْمَى
+salwa, سَلْوَى
+samiah, سَامِعَه
+samidah, صَمِيدَه
+saminah, سَمِينَه
+samiyah, سَامِيَه
+samma, صَمَّاء
+samrah, سَمْرَه
+samya, سَمْيَا
+samiyyah, سَمِيَّه
+shariqah, شَارِقَه
+saiqah, صَاعِقَه
+sariyah, سَارِيَه
+saudah, سَوْدَه
+saodah, سَوْدَه
+shafiah, شَفِيعَه
+shakirah, شَاكِرَه
+shafiyah, شَافِيِه
+shahidah, شَاهِدَه 
+shakilah, شَكِيلَه
+sharifah, شَارِفَه
+shifa, شِفَا شِفَاء
+suhailah, سُهَيْلَه
+sumairah, سُمَيْرَه
+sumayyah, سُمَيَّه
+sumayah, سُمَيَّه
+tahsin, تَحْسِين
+tasnim, تَسْنِيم
+ubaidah, عُبَيْدَه
+uzma, عُظْمَي
+wafa, وَفَا
+wafiyah, وَافِيَه
+wahidah, وَحِيدَه
+wajidah, وَاجِدَه
+walidah, وَلِيدَه
+waqidah, وَاقِدَه
+zafirah, ظَافِرَه
+zahidah, زَاهِدَه
+zahra, زَهْرَاء
+zakiyah, زَاكِيَه زَكِيَّه
+zakiah, زَكِيَّه زَاكِيَه
+zubaidah, زُبَيْدَه
+wan, وان
+nik, نيق
