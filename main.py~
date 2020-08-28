@@ -1,73 +1,44 @@
-from flask import Flask, request
+from flask import Flask, session, redirect, url_for, escape, request
 from flask import render_template
-# from flask.ext.sqlalchemy import SQLAlchemy
+#from flask.ext.sqlalchemy import SQLAlchemy
 
-from flask_caching import Cache
-
-from typing import Dict, List
-
-import re
-
-config = {
-    "DEBUG": True,           # some Flask specific configs
-    "CACHE_TYPE": "simple",  # Flask-Caching related configs
-    "CACHE_DEFAULT_TIMEOUT": 300
-}
-
-# import datetime
-
-# from functools import lru_cache
-# @lru_cache(maxsize=None)
-
+import datetime
 
 app = Flask(__name__)
 # Note: We don't need to call run() since our application is embedded within
 # the App Engine WSGI application server.
-app.config.from_mapping(config)
-cache = Cache(app)
 
 # latest changes
 latest_changes = "8-8-2020"
 
+
+import re
+
 # read rumi jawi data
 f = open("rumi-jawi-unicode.txt", mode="r", encoding='utf-8')
-# rjDict1 = {}
-# rjDict2 = {}
-# rjDict3 = {}
-
-# dummy values
-rjDict1: Dict[str, List[str]] = {1: [1]}
-# rjDict2: Dict[str, str] = {1: [1]}
-# rjDict3: Dict[str, str] = {1: [1]}
-
-# read line, append if homograph
+rjDict1 = {}
+rjDict2 = {}
+rjDict3 = {}
 
 for line in f:
     line = line.strip()
     r, j = line.split(",")
     if r not in rjDict1:
-        rjDict1[r] = [j]
+        rjDict1[r] = j
+    elif r not in rjDict2:
+        rjDict2[r] = j
     else:
-        rjDict1[r].append(j)
-    # elif r not in rjDict2:
-    #     rjDict2[r] = j
-    # else:
-    #     rjDict3[r] = j
+        rjDict3[r] = j
 
 # read name data base
 g = open("name-db.txt", mode="r", encoding='utf-8')
-nDict: Dict[str, str] = {}
+nDict = {}
 for line in g:
     line = line.strip()
     r, j = line.split(",")
     nDict[r] = j
 
-# just keys == rumi
-# keysDict = rjDict1.keys()
-
-keys = list(rjDict1)
-
-# norvig
+###norvig
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
 
@@ -136,57 +107,35 @@ def page_not_found(e):
 #     return times
 
 @app.route('/transliterate', methods=['POST'])
-@cache.cached(timeout=50)
 def transliterate():
     rumi = request.form['rumi']
     # print not working on browser
-    # print "hello world"
-    # print("The email address is in signup function '" + email + "'")
+    #print "hello world"
+    #print("The email address is in signup function '" + email + "'")
 
     # rumi.lower().strip() ## no effect ~~ 8/8/2020
 
     r = rumi.lower().strip()
 
-    # similar words beli, belian, belian, etc belia
-    r2: Dict[str, str] = {}
-
     if r in rjDict1:
-        # if r in rjDict2 and r in rjDict3:
-        #     return render_template('transliterate.html',
-        #                            rumi=r,
-        #                            jawi=rjDict1[r],
-        #                            jawi2=rjDict2[r],
-        #                            jawi3=rjDict3[r],
-        #                            latest_changes=latest_changes)
-        # elif r in rjDict2:
-        #     return render_template('transliterate.html',
-        #                            rumi=r,
-        #                            jawi=rjDict1[r],
-        #                            jawi2=rjDict2[r],
-        #                            latest_changes=latest_changes)
-        # else:
-        # beli -> belian, pembelian, pembeli, etc
-        # for k in keysDict:
-        #     if re.search(r, k):
-        #         r2[k] = k
-        # for k in rjDict1.keys():
-        #     if re.search(r, k):
-        #         r2[k] = k
-        # rjDict1[k] is a list. 21/8/2020
-        # need to convert list to string
-
-        # search for similar words: beli, belian, pembelian
-        for k in keys:
-            if re.search(str(r),str(k)):
-                r2[k] = ' '.join(rjDict1[k])
-        jawi = rjDict1[r]
-        jawi = ' '.join(jawi)
-
-        return render_template('transliterate.html',
-                               rumi=r,
-                               jawi=jawi,
-                               r2=r2,
-                               latest_changes=latest_changes)
+        if r in rjDict2 and r in rjDict3:
+            return render_template('transliterate.html',
+                                   rumi=r,
+                                   jawi=rjDict1[r],
+                                   jawi2=rjDict2[r],
+                                   jawi3=rjDict3[r],
+                                   latest_changes=latest_changes)
+        elif r in rjDict2:
+            return render_template('transliterate.html',
+                                   rumi=r,
+                                   jawi=rjDict1[r],
+                                   jawi2=rjDict2[r],
+                                   latest_changes=latest_changes)
+        else:
+            return render_template('transliterate.html',
+                                   rumi=r,
+                                   jawi=rjDict1[r],
+                                   latest_changes=latest_changes)
     else:
         guest1 = edits1(r)
         guest2 = []
@@ -205,7 +154,6 @@ def transliterate():
 
 @app.route('/')
 @app.route('/rumijawi')
-@cache.cached(timeout=50)
 def rumijawi():
     # Store the current access time in Datastore.
     # store_time(datetime.datetime.now())
@@ -213,27 +161,24 @@ def rumijawi():
     # Fetch the most recent 10 access times from Datastore.
     # times = fetch_times(10)
 
-    # return render_template('rumijawi.html', times=times,
+    #return render_template('rumijawi.html', times=times,
     #                       latest_changes=latest_changes)
     return render_template('rumijawi.html', latest_changes=latest_changes)
 
-
 @app.route('/rumijawi_paragraph')
-@cache.cached(timeout=50)
 def rumijawi_paragraph():
     return render_template('rumijawi_paragraph.html',
                            latest_changes=latest_changes)
 
 
 @app.route('/transliterate_paragraph', methods=['POST'])
-@cache.cached(timeout=50)
 def transliterate_paragraph():
     rumi = request.form['rumi']
     rumi = re.split('(\W+)', rumi)
 
     # print not working on browser
-    # print "hello world"
-    # print("The email address is in signup function '" + email + "'")
+    #print "hello world"
+    #print("The email address is in signup function '" + email + "'")
 
     punc = ['.', ',', '?', ':', ';', '-', '(', ')', '!', '`', '"', '“']
     punc_arab = ['.', ',', '؟', ':', '؛', '-', ')', '(', '!', '’', '"', '"']
@@ -269,19 +214,16 @@ def transliterate_paragraph():
 
 
 @app.route('/overview')
-@cache.cached(timeout=50)
 def overview():
     return render_template('overview.html', latest_changes=latest_changes)
 
 
 @app.route('/teknikal')
-@cache.cached(timeout=50)
 def teknikal():
     return render_template('teknikal.html', latest_changes=latest_changes)
 
 
 @app.route('/hubungi')
-@cache.cached(timeout=50)
 def hubungi():
     return render_template('hubungi.html', latest_changes=latest_changes)
 
@@ -290,13 +232,11 @@ app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 
 @app.route('/nama')
-@cache.cached(timeout=50)
 def nama():
     return render_template('nama.html', latest_changes=latest_changes)
 
 
 @app.route('/transliterate_name', methods=['POST'])
-@cache.cached(timeout=50)
 def transliterate_name():
 
     rumi = request.form['rumi']

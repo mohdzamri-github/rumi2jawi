@@ -89,51 +89,17 @@
             <p>
                 <font size="+4" face="Jawi Uthman Taha">{{jawi}}</font>
             <p>
-                {% if jawi2 %} {{rumi}} is a double homograph, another transliteration is:
+
+                Similar Words / Perkataan hampir:
             <p>
-                <font size="+4" face="Jawi Uthman Taha">{{jawi2}}</font>
-            <p>
-                {% endif %}
-                {% if jawi3 %} <font size="+4" face="Jawi Uthman Taha">{{rumi}}</font>
-                is a triple homograph, the third transliteration is:
-            <p>
-                <font size="+4" face="Jawi Uthman Taha">{{jawi3}}</font>
-                {% endif %}
-                {#
-                                        <p>
-                                            <ul>
-                                                {% for j in jawi %}
-                                                    <li>
-                                                        <p style="font-size:36px">{% print(j) %}</p>
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        </p>
-                                        }
-                                        <!-- <p style="font-size:36px">{{jawi}}</p> -->
-                                        <!-- {% if jawi2 %} {{rumi}} is a double homograph, another
-                                            transliteration is:
-                                            <p style="font-size:36px">{{jawi2}}</p>
-                                        {% endif %}
-                                        {% if jawi3 %} {{rumi}} is a triple homograph, the
-                                            third transliteration is:
-                                            <p style="font-size:36px">{{jawi3}}</p>
-                                        {% endif %}
-                                        {# comment out  -->
-                                        1.
-                                        <p style="font-size:36px">{{jawi}}</p>
-                                        2.
-                                        <p style="font-size:36px">{{jawi2}}</p>
-                                        3.
-                                        <p style="font-size:36px">{{jawi3}}</p>
-                                        <p style="font-size:36px" font-family="Jawi Uthman Taha">{{rumi}}</p>
-                                        <p style="font-size:36px" font-family: "Times New Roman">{{jawi}}</p>
-                                        #}
-                                        <p>
-                                            <hr>
-                                        </p>
-                More Information: zamri@ukm.edu.my
-                <a href="#">latest update: {{latest_changes}}</a>
+            <ol>
+                {% for w in r2 %}
+                <li>{{w}} = <font size="+4" face="Jawi Uthman Taha">{{r2[w]}}</font> </li>
+                {% endfor %}
+            </ol>
+            </p>
+            More Information: zamri@ukm.edu.my
+            <a href="#">latest update: {{latest_changes}}</a>
         </div>
 </body>
 

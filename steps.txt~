@@ -16,6 +16,3 @@ gcloud projects list
 gcloud config set project <ID>
 
 gcloud config set project example-bmi
-
-gunicorn -b :8090 --reload --max-requests 1 main:app
-
