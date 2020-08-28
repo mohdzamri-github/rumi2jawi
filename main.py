@@ -2,11 +2,19 @@ from flask import Flask, request
 from flask import render_template
 # from flask.ext.sqlalchemy import SQLAlchemy
 
-from flask_caching import Cache
+from wtforms.validators import DataRequired
+from wtforms import StringField, SubmitField, TextAreaField
+from flask_wtf import FlaskForm
 
 from typing import Dict, List
+from flask_bootstrap import Bootstrap
+from flask_wtf import FlaskForm
 
+
+from typing import Dict, List
 import re
+from typing import Dict, List
+
 
 config = {
     "DEBUG": True,           # some Flask specific configs
@@ -19,12 +27,22 @@ config = {
 # from functools import lru_cache
 # @lru_cache(maxsize=None)
 
+config = {
+    "DEBUG": True,           # some Flask specific configs
+    "CACHE_TYPE": "simple",  # Flask-Caching related configs
+    "CACHE_DEFAULT_TIMEOUT": 300
+}
+
 
 app = Flask(__name__)
 # Note: We don't need to call run() since our application is embedded within
 # the App Engine WSGI application server.
 app.config.from_mapping(config)
-cache = Cache(app)
+# cache = Cache(app)
+
+app.config['SECRET_KEY'] = 'abc123'
+bootstrap = Bootstrap(app)
+
 
 # latest changes
 latest_changes = "8-8-2020"
@@ -41,6 +59,7 @@ rjDict1: Dict[str, List[str]] = {1: [1]}
 # rjDict3: Dict[str, str] = {1: [1]}
 
 # read line, append if homograph
+
 
 for line in f:
     line = line.strip()
@@ -84,6 +103,10 @@ def edits1(word):
 def edits2(word):
     return set(e2 for e1 in edits1(word) for e2 in edits1(e1))
 
+
+class RumiJawi(FlaskForm):
+    rumi = StringField('kata melayu', validators=[DataRequired()])
+    submit = SubmitField('submit')
 
 # @app.route('/')
 # def hello():
@@ -136,7 +159,7 @@ def page_not_found(e):
 #     return times
 
 @app.route('/transliterate', methods=['POST'])
-@cache.cached(timeout=50)
+# @cache.cached(timeout=50)
 def transliterate():
     rumi = request.form['rumi']
     # print not working on browser
@@ -177,7 +200,7 @@ def transliterate():
 
         # search for similar words: beli, belian, pembelian
         for k in keys:
-            if re.search(str(r),str(k)):
+            if re.search(str(r), str(k)):
                 r2[k] = ' '.join(rjDict1[k])
         jawi = rjDict1[r]
         jawi = ' '.join(jawi)
@@ -205,7 +228,7 @@ def transliterate():
 
 @app.route('/')
 @app.route('/rumijawi')
-@cache.cached(timeout=50)
+# @cache.cached(timeout=50)
 def rumijawi():
     # Store the current access time in Datastore.
     # store_time(datetime.datetime.now())
@@ -218,15 +241,25 @@ def rumijawi():
     return render_template('rumijawi.html', latest_changes=latest_changes)
 
 
+@app.route('/index', methods=['GET', 'POST'])
+def index():
+    rumi = ''
+    jawi = ''
+    form = RumiJawi()
+
+    # return render_template('index.html')
+    return render_template('index.html', form=form, latest_changes=latest_changes)
+
+
 @app.route('/rumijawi_paragraph')
-@cache.cached(timeout=50)
+# @cache.cached(timeout=50)
 def rumijawi_paragraph():
     return render_template('rumijawi_paragraph.html',
                            latest_changes=latest_changes)
 
 
 @app.route('/transliterate_paragraph', methods=['POST'])
-@cache.cached(timeout=50)
+# @cache.cached(timeout=50)
 def transliterate_paragraph():
     rumi = request.form['rumi']
     rumi = re.split('(\W+)', rumi)
@@ -269,19 +302,19 @@ def transliterate_paragraph():
 
 
 @app.route('/overview')
-@cache.cached(timeout=50)
+# @cache.cached(timeout=50)
 def overview():
     return render_template('overview.html', latest_changes=latest_changes)
 
 
 @app.route('/teknikal')
-@cache.cached(timeout=50)
+# @cache.cached(timeout=50)
 def teknikal():
     return render_template('teknikal.html', latest_changes=latest_changes)
 
 
 @app.route('/hubungi')
-@cache.cached(timeout=50)
+# @cache.cached(timeout=50)
 def hubungi():
     return render_template('hubungi.html', latest_changes=latest_changes)
 
@@ -290,13 +323,13 @@ app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 
 @app.route('/nama')
-@cache.cached(timeout=50)
+# @cache.cached(timeout=50)
 def nama():
     return render_template('nama.html', latest_changes=latest_changes)
 
 
 @app.route('/transliterate_name', methods=['POST'])
-@cache.cached(timeout=50)
+# @cache.cached(timeout=50)
 def transliterate_name():
 
     rumi = request.form['rumi']
