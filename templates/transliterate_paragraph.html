@@ -1,115 +1,66 @@
-<!DOCTYPE html>
-<title>Welcome | Rumi-Jawi transliteration engine)</title>
+{% extends "base.html" %}
+{% block content %}
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+{% block header %}
+{{ super() }}
+{% endblock %}
 
-    <title>Welcome | Rumi-Jawi transliteration engine)</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<div class="container">
+    Rumi dalam paragraf. Maksimun 2500 aksara.
+    <p>
+    <form action="/transliterate_paragraph" method="post">
+        <textarea name="rumi" style="resize: none;" rows=10 cols="120" maxlength=2500 autofocus="autofocus"
+            placeholder="tulis atau salin-dan-tampal perkataan rumi di sini"></textarea><br>
+        <input type="submit" value="transliterate"></input>
+    </form>
+    </p>
+</div>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"
-        integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP"
-        crossorigin="anonymous"></script>
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-
-
-
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-1116317-9']);
-        _gaq.push(['_trackPageview']);
-        (function () {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })
-            ();
-    </script>
-
-
-</head>
-
-
-<body>
-
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/overview">Overview</a>
-                <a class="navbar-brand" href="/hubungi">Hubungi</a>
-                <a class="navbar-brand" href="/teknikal">Teknikal</a>
-                <a class="navbar-brand" href="/rumijawi">Rumi-Jawi</a>
-                <a class="navbar-brand" href="/rumijawi_paragraph">Rumi-Jawi paragraph</a>
-                <a class="navbar-brand" href="/nama">Transliterasi Nama</a>
-            </div>
-            <!--/.nav-collapse -->
-        </div>
-    </nav>
-
-
-    <!-- Begin page content -->
+<div class="py-5">
     <div class="container">
-
-        Rumi dalam paragraf. Maksimun 2500 aksara.
-        <form action="/transliterate_paragraph" method="post">
-            <textarea name="rumi" style="resize: none;" rows=10 cols="100" maxlength=2500 autofocus="autofocus"
-                placeholder="tulis atau salin-dan-tampal perkataan rumi di sini"></textarea>
-            <br>
-            <input type="submit" value="transliterate"></input>
-        </form>
-
-        <!-- <h1>Rumi</h1> -->
-        <!-- {{paragraph_rumi}} -->
-        <h1>Rumi</h1>
-        {% for s in paragraph_rumi %}
-        <font size="+2">{{s}}</font>
-        {% endfor %}
-        <!-- <h1>Jawi</h1> -->
-        <!-- <p dir="rtl" lang="ar">
-            <font size="+2" face="Jawi Uthman Taha">{{paragraph_jawi}}</font>
-        </p> -->
-        <h1>Jawi</h1>
-        {% for s in paragraph_jawi %}
-        <font size="+2" face="Jawi Uthman Taha">{{s}}</font>
-        {% endfor %}
-
-        <h1>Rumi-Jawi</h1>
-        {% for s in paragraph_rumi %}
-
-        <font size="+2">{{s}}</font>
-        <font size="+2" face="Jawi Uthman Taha">({{paragraph_jawi[paragraph_rumi.index(s)]}})</font>
-        {% endfor %}
-        <h1>Info</h1>
-        <p>Jumlah perkataan: {{number_of_words}}</p>
-        <p>Jumlah perkataan tidak boleh transliterasi: {{number_of_untransliterate}}</p>
-        <p>Peratusan transliterasi: {{ (number_of_words - number_of_untransliterate)/number_of_words }}</p>
-        <p>Tak boleh transliterasi:</p>
-        {% for s in cannot_transliterasi %}
-        {{s}}
-        {% endfor %}
-        <footer class="footer">
-            <p class="text-primary">More Information: zamri@ukm.edu.my.</p>
-            <p class="text-primary">latest update: {{latest_changes}} </p>
-        </footer>
+        <div class="row">
+            <div class="col-md-6">
+                <p class="">Rumi</p>
+                <p class="">
+                    {% for s in paragraph_rumi %}
+                    <font size="+1">{{s}}</font>
+                    {% endfor %}
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p class="">Jawi</p>
+                <p class="">
+                    {% for s in paragraph_jawi %}
+                    <font size="+2" face="Jawi Uthman Taha">{{s}}</font>
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
     </div>
+</div>
 
-</body>
+<div class="container">
+    <h1>Rumi-Jawi</h1>
+    {% for s in paragraph_rumi %}
 
-</html>
+    <font size="+1">{{s}}</font>
+    <font size="+1" face="Jawi Uthman Taha">({{paragraph_jawi[paragraph_rumi.index(s)]}})</font>
+    {% endfor %}
+    <h1>Info</h1>
+    <p>Jumlah perkataan: {{number_of_words}}</p>
+    <p>Jumlah perkataan tidak boleh transliterasi: {{number_of_untransliterate}}</p>
+    <p>Peratusan transliterasi: {{ (number_of_words - number_of_untransliterate)/number_of_words | round }}</p>
+    <p>Tak boleh transliterasi:</p>
+    {% for s in cannot_transliterasi %}
+    {{s}}
+    {% endfor %}
+</div>
+
+<div class="container">
+    {% block footer %}
+    &copy; Copyright 2020 by zamri@ukm.edu.my</a>.
+    <p class="text-primary">latest update: {{latest_changes}} </p>
+    {% endblock %}
+</div>
+
+{% endblock %}

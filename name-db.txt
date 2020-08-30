@@ -24,7 +24,7 @@ daud, دَاود
 dawud, دَاود
 zakariyya, زَكَرِيَّا
 zakaria, زَكَرِيَّا
-zulkifli, ذُوالْكِفْل 
+zulkifli, ذُوالْكِفْل
 zulkefli, ذُوالْكِفْل
 sulaiman, سُلَيْمَان
 shuib, شُعَيب
@@ -129,7 +129,7 @@ farhan, فَرْحَان
 farhat, فَرْحَت
 farid, فَرِيد
 faruq, فَارُوق
-faruk, فَارُوق 
+faruk, فَارُوق
 farook, فَارُوق
 fatih, فَاتِح
 fuad, فُؤَاد
@@ -178,7 +178,7 @@ kamal, كَمَال
 karim, كَرِيم
 kazim, كَاظِم
 khairah, خَيْرَه
-khairun, خَيْرُون 
+khairun, خَيْرُون
 khalid, خَلِيد خَالِد
 khalil, خَلِيْل
 latif, لَطِيف
@@ -211,7 +211,7 @@ mubin, مُبِين
 mufti, مُفْتِي
 muhammad, مُحَمَّد
 mohd, مُحَمَّد
-mohammed, مُحَمَّد 
+mohammed, مُحَمَّد
 muhsin, مٌحْصِن مٌحْسِن
 muid, مُعِيد
 mujahid, مُجَاهِد
@@ -271,7 +271,7 @@ salam, سَلَم
 salamah, سَلَامَه
 salih, صَالِح
 saleh, صَالِح
-salleh, صَالِح 
+salleh, صَالِح
 salik, سَلِيك
 salim, سَلِيم
 saleem, سَلِيم
@@ -285,7 +285,7 @@ sarif, صَرِيف
 sariyah, سَارِيه
 saud, صَعُوج سَعُود
 sayyib, صَيِّب
-shafiq, شَافِع شَفِع 
+shafiq, شَافِع شَفِع
 shahid, شَهِد
 shakir, شَاكِر
 shuaib, شُعَيْب
@@ -450,7 +450,7 @@ saodah, سَوْدَه
 shafiah, شَفِيعَه
 shakirah, شَاكِرَه
 shafiyah, شَافِيِه
-shahidah, شَاهِدَه 
+shahidah, شَاهِدَه
 shakilah, شَكِيلَه
 sharifah, شَارِفَه
 shifa, شِفَا شِفَاء
@@ -476,3 +476,4 @@ zakiah, زَكِيَّه زَاكِيَه
 zubaidah, زُبَيْدَه
 wan, وان
 nik, نيق
+hajar, هَـاجَـر

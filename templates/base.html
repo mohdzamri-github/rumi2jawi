@@ -1,19 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Welcome | Rumi-Jawi transliteration engine)</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-1116317-9']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })
+            ();
+    </script>
+    <style>
+        p.serif {
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        p.sansserif {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
 {% extends "bootstrap/base.html" %}
 
-{% block title %}Kamus Melayu Dewan 4{% endblock %}
+{% block title %}Transliterasi Rumi-Jawi: {% endblock %}
 
 <body>
-    <div>Kamus Melayu Dewan 4: <a href="/index">Home</a></div>
+    <div>Transliterasi Rumi-Jawi: <a href="/index">Home</a></div>
     <hr>
+    {% block header %}
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"> <a href="/">Rumah</a> </li>
+                        <li class="breadcrumb-item active"><a href="/overview">Info</a></li>
+                        <li class="breadcrumb-item active"><a href="/teknikal">Apps</a></li>
+                        <li class="breadcrumb-item active"><a href="/rumijawi">RumiJawi</a></li>
+                        <li class="breadcrumb-item active"><a href="/rumijawi_paragraph">RumiJawi(Paragraf)</a></li>
+                        <li class="breadcrumb-item active"><a href="/nama">Transliterasi Name</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
     {% block content %}{% endblock %}
 
-    <div id="footer">
+    <div class="container">
         {% block footer %}
-        &copy; Copyright 2008 by <a href="http://domain.invalid/">you</a>.
+        &copy; Copyright 2020 by zamri@ukm.edu.my</a>.
+        <p class="text-primary">latest update: {{latest_changes}} </p>
         {% endblock %}
     </div>
 </body>
+
 </html>

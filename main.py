@@ -64,6 +64,7 @@ rjDict1: Dict[str, List[str]] = {1: [1]}
 for line in f:
     line = line.strip()
     r, j = line.split(",")
+    r = r.strip()
     if r not in rjDict1:
         rjDict1[r] = [j]
     else:
@@ -82,7 +83,7 @@ for line in g:
 # just keys == rumi
 # keysDict = rjDict1.keys()
 
-keys = list(rjDict1)
+keysrjDict = list(rjDict1)
 
 # norvig
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
@@ -106,19 +107,6 @@ class RumiForm(FlaskForm):
     rumi = StringField('kata rumi', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
-
-# @app.route('/')
-# def hello():
-#     # """Return a friendly HTTP greeting."""
-#     # return 'Hello World! Flask'
-# def index():
-#     return 'Index Page'
-
-# @app.route('/')
-# def index():
-#     if 'username' in session:
-#         return 'Logged in as %s' % escape(session['username'])
-#     return 'You are not logged in'
 
 
 @app.errorhandler(404)
@@ -144,33 +132,7 @@ def transliterate():
     r2: Dict[str, str] = {}
 
     if r in rjDict1:
-        # if r in rjDict2 and r in rjDict3:
-        #     return render_template('transliterate.html',
-        #                            rumi=r,
-        #                            jawi=rjDict1[r],
-        #                            jawi2=rjDict2[r],
-        #                            jawi3=rjDict3[r],
-        #                            latest_changes=latest_changes)
-        # elif r in rjDict2:
-        #     return render_template('transliterate.html',
-        #                            rumi=r,
-        #                            jawi=rjDict1[r],
-        #                            jawi2=rjDict2[r],
-        #                            latest_changes=latest_changes)
-        # else:
-        # beli -> belian, pembelian, pembeli, etc
-        # for k in keysDict:
-        #     if re.search(r, k):
-        #         r2[k] = k
-        # for k in rjDict1.keys():
-        #     if re.search(r, k):
-        #         r2[k] = k
-        # rjDict1[k] is a list. 21/8/2020
-        # need to convert list to string
-
-        # search for similar words: beli, belian, pembelian
-        # keys = list(rjDict1)
-        for k in keys:
+        for k in keysrjDict:
             if re.search(str(r), str(k)):
                 r2[k] = ' '.join(rjDict1[k])
         jawi = rjDict1[r]
@@ -234,7 +196,7 @@ def index():
     if r in rjDict1:
         # search for similar words: beli, belian, pembelian
         # keys = list(rjDict1)
-        for k in keys:
+        for k in keysrjDict:
             if re.search(str(r), str(k)):
                 r2[k] = ' '.join(rjDict1[k])
         jawi = rjDict1[r]
@@ -270,7 +232,7 @@ def rumijawi_paragraph():
 # @cache.cached(timeout=50)
 def transliterate_paragraph():
     rumi = request.form['rumi']
-    rumi = re.split('(\W+)', rumi)
+    rumi = re.split(r"(\W)", rumi)
 
     # print not working on browser
     # print "hello world"
@@ -355,7 +317,7 @@ def nama():
 def transliterate_name():
 
     rumi = request.form['rumi']
-    rumi = re.split('(\W+)', rumi)
+    rumi = re.split('(\W)', rumi)
 
     name_rumi = []
     name_jawi = []

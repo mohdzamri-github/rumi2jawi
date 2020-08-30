@@ -1,115 +1,75 @@
-<!DOCTYPE html>
-<html>
-<title>Welcome | Rumi-Jawi transliteration engine)</title>
-<meta charset=utf-8>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- bootstrap -->
-<!-- Latest compiled and minified CSS -->
-<!-- Latest compiled and minified CSS -->
-<!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
-<!-- Optional theme -->
-<!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"> -->
-<!-- Latest compiled and minified JavaScript -->
-<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
-<!-- <link rel=stylesheet type=text/css href="{{ url_for('static', filename='blog.css') }}"> -->
+{% extends "base.html" %}
+{% block content %}
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Welcome | Rumi-Jawi transliteration engine)</title>
+{% block header %}
+{{ super() }}
+{% endblock %}
 
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"
-    integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP"
-    crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-</head>
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-1116317-9']);
-  _gaq.push(['_trackPageview']);
-  (function () {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })
-    ();
-</script>
-<html>
-
-<body>
-  <!-- Fixed navbar -->
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/overview">Overview</a>
-        <a class="navbar-brand" href="/hubungi">Hubungi</a>
-        <a class="navbar-brand" href="/teknikal">Teknikal</a>
-        <a class="navbar-brand" href="/rumijawi">Rumi-Jawi</a>
-        <a class="navbar-brand" href="/rumijawi_paragraph">Rumi-Jawi peranggan</a>
-        <a class="navbar-brand" href="/nama">Transliterasi Nama</a>
-      </div>
-      <!--/.nav-collapse -->
-    </div>
-  </nav>
-  <div class="container">
-    Please input name in rumi. Sila masukkan nama dalam rumi.
-    <p>
-    <form action="/transliterate_name" method="post">
-      <!-- <textarea name="rumi" style="resize: none;" data-limit-rows="true" rows="1" cols="40" autofocus="autofocus"
+<div class="container">
+  Please input name in rumi. Sila masukkan nama dalam rumi.
+  <p>
+  <form action="/transliterate_name" method="post">
+    <!-- <textarea name="rumi" style="resize: none;" data-limit-rows="true" rows="1" cols="40" autofocus="autofocus"
         placeholder="nama dalam ejaan rumi"></textarea><br> -->
-        <input name="rumi" type="text" placeholder="nama">
-      <!-- <input type="submit" value="transliterasi nama"></input> -->
-      <button class="btn btn-primary" name="_submit" type="submit" value="transliterate">transliterate</button>
-    </form>
+    <input name="rumi" type="text" placeholder="nama">
+    <!-- <input type="submit" value="transliterasi nama"></input> -->
+    <button class="btn btn-primary" name="_submit" type="submit" value="transliterate">transliterate</button>
+  </form>
+  </p>
+  <div class="well well-lg">
+    <h2>Perhatian</h2>
+    <lo>
+
+    </lo>
+    <li>Transliterasi nama adalah satu yang susah. Andaian adalah, kebanyak nama Melayu adalah berasalkan dari nama
+      Arab yang membawa makna-makna yang baik-baik. Namum, terdapat pelbagai variasi ejaan/transliterasi untuk nama
+      Arab.
+    </li>
+    <li>
+      Sebagai contoh, nama Arab (عَائِشه) boleh ditransliterasi dengan ayishah, ayeeshah, aishah, aisha, ayeshah dan
+      beberapa variasi
+      lain. Oleh itu agak penting untuk mengetahui variasi nama untuk mendapatkan ejaan Arab yang tepat dan makna yang
+      baik.
+    </li>
+    <li>
+      nama "zamri", umpamanya boleh dieja dengan (zamri, ظَامرِي ظَمرِي زَمري زَمرِ زَامرِي) .
+    </li>
+    <li>
+      nama (rokiah) mungkin berasal dari ruqayyah(رُقَيَّه) , atau rogayah.
+    </li>
+    <li>
+      nama (nuraini) mungkin berasal dari (nur aini)(نُور عَيْنِي).
+    </li>
+    <li>
+      Penggunaan wakil untuk huruf ain sebagai "'' sudah tidak digunakan. Sebagai contoh, (عَيْنِي) dieja sebagai
+      aini.
+    </li>
+    <li>
+      nama (يُوسُف) mempunyai beberapa ejaan; yusof, yousuf, yosof, dll.
+    </li>
+    <li>
+      nama (mat'il) mungkin berasal dari nama (ismail), kerana penggunaan loghat Kelantan.
+    </li>
+    <li>
+      Sekiranya ada senarai nama yang boleh dikongsi. mohon panjangkan supaya senarai nama boleh dikembangkan.
+      Harapan kami agar kita dapat menulis nama dalam Jawi secara betul dan nama itu membawa makna-makna yang
+      baik.
+    </li>
+    jumlah nama: 479. Rujukan ejaan: Disctionary of Islamic Names: derived from the Quran, Ahadith and Seerah.
+    Prof. Hafiz Shaukat Ali Hareeri. Maktaba Dar-us-Salam. 2009.
     </p>
-    <div class="well well-lg">
-      <h2>Perhatian</h2>
 
-      <p>Transliterasi nama adalah satu yang susah. Andaian adalah, kebanyak nama Melayu adalah berasalkan dari nama
-        Arab yang membawa makna-makna yang baik-baik. Namum, terdapat pelbagai variasi ejaan/transliterasi untuk nama
-        Arab.
-        <br>
-        Sebagai contoh, nama Arab (عَائِشه) boleh ditransliterasi dengan ayishah, ayeeshah, aishah, aisha, ayeshah dan
-        beberapa variasi
-        lain. Oleh itu agak penting untuk mengetahui variasi nama untuk mendapatkan ejaan Arab yang tepat dan makna yang
-        baik.
-        <br>
-        nama "zamri", umpamanya boleh dieja dengan (zamri, ظَامرِي ظَمرِي زَمري زَمرِ زَامرِي) .
-        <br> nama (rokiah) mungkin berasal dari ruqayyah(رُقَيَّه) .
-        <br>
-        nama (nuraini) mungkin berasal dari (nur aini)(نُور عَيْنِي).
-        <br>
-        Penggunaan wakil untuk huruf ain sebagai "'' sudah tidak digunakan. Sebagai contoh, (عَيْنِي) dieja sebagai
-        aini.
-        <br> nama (يُوسُف) mempunyai beberapa ejaan; yusof, yousuf, yosof, dll.
-        <br> nama (mat'il) mungkin berasal dari nama (ismail), kerana penggunaan loghat Kelantan.
-        <br> Sekiranya ada senarai nama yang boleh dikongsi. mohon panjangkan supaya senarai nama boleh dikembangkan.
-        <br> Harapan kami agar kita dapat menulis nama dalam Jawi secara betul dan nama itu membawa makna-makna yang
-        baik.
-        <br> jumlah nama: 479. Rujukan ejaan: Disctionary of Islamic Names: derived from the Quran, Ahadith and Seerah.
-        Prof. Hafiz Shaukat Ali Hareeri. Maktaba Dar-us-Salam. 2009.
-      </p>
-
-    </div>
-    <hr>
-    <footer class="footer">
-      <p class="text-primary">More Information: zamri@ukm.edu.my.</p>
-      <p class="text-primary">latest update: {{latest_changes}} </p>
-    </footer>
   </div>
-</body>
+</div>
+<div class="container">
+  {% block footer %}
+  &copy; Copyright 2020 by zamri@ukm.edu.my</a>.
+  <p class="text-primary">latest update: {{latest_changes}} </p>
+  {% endblock %}
+</div>
 
-</html>
+
+{% endblock %}
+
+
+{# all output in block content #}
