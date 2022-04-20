@@ -4,12 +4,16 @@ rumi2jawi using gcloud and python 3 . similar code to rumi-to-jawi
 make sure to run gcloud init before launch
 gunicorn
 
-gcloud init
-<select account and project>
-gunicorn -b :8090 --reload --max-requests 1 main:app
+* gcloud init
 
-better unicode support
+* <select account and project>
+  
+* gunicorn -b :8090 --reload --max-requests 1 main:app
 
-gcloud app deploy
+
+* better unicode support
+
+  
+* gcloud app deploy
 
 #   
