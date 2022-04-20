@@ -10,8 +10,10 @@ gcloud init
 gunicorn -b :8090 --reload --max-requests 1 main:app
 ```
 
-## 
+
+
 *better unicode support*
+
 *gcloud app deploy*
 
-#   
+
